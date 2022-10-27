@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="edu.kit.outwait.loginSystem.UserViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".loginSystem.LoginFragment">
+
+
+        <TextView
+            android:id="@+id/tvTitleSlotCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/are_you_a_client"
+            android:textColor="@color/outwait_color"
+            android:textSize="@dimen/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+            android:id="@+id/boxes_institute_password"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="24dp"
+            android:inputType="textPassword"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:nextFocusDown="@id/btnLoginFrag"
+            app:hasClearButton="true"
+            app:iconSignifier="@drawable/ic_institue_key"
+            app:labelText="@string/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/boxes_institute_name"
+            app:panelBackgroundColor="@color/code_edit_text_background"
+            app:primaryColor="@color/code_edit_text_bottom_line"
+            app:secondaryColor="@color/outwait_color_dark">
+
+            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                android:id="@+id/etInstitutePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusDown="@id/boxes_institute_name"
+                android:password="true"
+                android:singleLine="true"
+                android:text="@={viewModel.institutePassword}"
+                tools:ignore="Deprecated" />
+
+        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+            android:id="@+id/boxes_institute_name"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="16dp"
+            app:hasClearButton="true"
+            app:iconSignifier="@drawable/ic_institute_person"
+            app:labelText="Name"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:nextFocusDown="@id/btnLoginFrag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleLogin"
+            app:panelBackgroundColor="@color/code_edit_text_background"
+            app:primaryColor="@color/code_edit_text_bottom_line"
+            app:secondaryColor="@color/outwait_color_dark">
+
+            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                android:id="@+id/etInstituteName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusDown="@id/btnLoginFrag"
+                android:singleLine="true"
+                android:text="@={viewModel.instituteName}" />
+
+        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+        <com.lukelorusso.codeedittext.CodeEditText
+            android:id="@+id/etSlotCode"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:foregroundGravity="center"
+            android:inputType="textCapCharacters"
+            android:maxLength="9"
+            app:cet_codePlaceholder="*"
+            android:backgroundTint="@color/outwait_color"
+            app:cet_scrollDurationInMillis="300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleSlotCode">
+
+        </com.lukelorusso.codeedittext.CodeEditText>
+
+        <android.widget.Button
+            android:id="@+id/btnLoginFrag"
+            style="@style/DefaultButton"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:onClick="@{()->viewModel.login()}"
+            android:text="@string/sign_in"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/boxes_institute_password"
+            app:layout_constraintStart_toStartOf="@+id/boxes_institute_password"
+            app:layout_constraintTop_toBottomOf="@+id/tvPForgotton"
+            app:layout_constraintVertical_bias="0.224" />
+
+        <ImageView
+            android:id="@+id/ivScan"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_qr_code"
+            app:layout_constraintEnd_toEndOf="@+id/etSlotCode"
+            app:layout_constraintStart_toStartOf="@+id/etSlotCode"
+            app:layout_constraintTop_toBottomOf="@+id/etSlotCode" />
+
+        <TextView
+            android:id="@+id/tvPForgotton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{()->viewModel.navigateToPasswordForgottenFragment()}"
+            android:text="@string/forgot_password"
+            android:textColor="@color/outwait_color_dark"
+            app:layout_constraintEnd_toEndOf="@+id/boxes_institute_password"
+            app:layout_constraintStart_toStartOf="@+id/boxes_institute_password"
+            app:layout_constraintTop_toBottomOf="@+id/boxes_institute_password" />
+
+        <TextView
+            android:id="@+id/tvTitleLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/are_you_an_institute"
+            android:textColor="@color/outwait_color"
+            android:textSize="@dimen/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gdHorizental" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gdHorizental"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="247dp"
+            app:layout_constraintGuide_percent="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

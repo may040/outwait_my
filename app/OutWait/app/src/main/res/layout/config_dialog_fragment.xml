@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="edu.kit.outwait.recyclerviewScreens.configurationsScreen.ConfigDialogViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".recyclerviewScreens.configurationsScreen.ConfigDialogFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:foregroundGravity="center_vertical|center|center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMode">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sMode"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:gravity="right|center_horizontal|center_vertical"
+                    android:thumb="@drawable/thumb"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:track="@drawable/track" />
+
+                <TextView
+                    android:id="@+id/tvSwitchText"
+                    android:layout_width="100dp"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="clip_vertical|center_horizontal|left"
+                    android:textAlignment="center"
+                    android:textColor="@color/outwait_color"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/sMode"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <android.widget.Button
+                android:id="@+id/btnSave"
+                style="@style/DefaultButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/configPrioDuration" />
+
+            <TextView
+                android:id="@+id/tvMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:gravity="clip_horizontal|center|center_vertical"
+                android:text="@string/active_mode"
+                android:textColor="@color/outwait_color"
+                android:textSize="@dimen/title_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.561"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <mobi.upod.timedurationpicker.TimeDurationPicker
+                android:id="@+id/configDurationNotification"
+                android:layout_width="213dp"
+                android:layout_height="247dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@color/duration_digit_color"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvNotificationTime"
+                app:layout_constraintStart_toStartOf="@+id/tvNotificationTime"
+                app:layout_constraintTop_toBottomOf="@+id/tvNotificationTime"
+                app:timeUnits="hhmm">
+
+            </mobi.upod.timedurationpicker.TimeDurationPicker>
+
+            <TextView
+                android:id="@+id/tvStandardSlot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/standard_slot_duration"
+                android:textColor="@color/outwait_color"
+                android:textSize="@dimen/title_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+
+            <mobi.upod.timedurationpicker.TimeDurationPicker
+                android:id="@+id/configStandardDuration"
+                android:layout_width="158dp"
+                android:layout_height="185dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@color/duration_digit_color"
+                app:layout_constraintEnd_toEndOf="@+id/tvStandardSlot"
+                app:layout_constraintStart_toStartOf="@+id/tvStandardSlot"
+                app:layout_constraintTop_toBottomOf="@+id/tvStandardSlot"
+                app:timeUnits="hhmm"></mobi.upod.timedurationpicker.TimeDurationPicker>
+
+            <TextView
+                android:id="@+id/tvNotificationTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center_horizontal"
+                android:text="@string/notificationtime"
+                android:textColor="@color/outwait_color"
+                android:textSize="@dimen/title_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/configStandardDuration" />
+
+            <mobi.upod.timedurationpicker.TimeDurationPicker
+                android:id="@+id/configDelayDuration"
+                android:layout_width="213dp"
+                android:layout_height="247dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@color/duration_digit_color"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvDelayNotificationTime"
+                app:layout_constraintStart_toStartOf="@+id/tvDelayNotificationTime"
+                app:layout_constraintTop_toBottomOf="@+id/tvDelayNotificationTime"
+                app:timeUnits="hhmm">
+
+            </mobi.upod.timedurationpicker.TimeDurationPicker>
+
+            <TextView
+                android:id="@+id/tvDelayNotificationTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/delay_notificationtime"
+                android:textColor="@color/outwait_color"
+                android:textSize="@dimen/title_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/configDurationNotification" />
+
+            <TextView
+                android:id="@+id/tvPrioritizationTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="clip_vertical|center_vertical"
+                android:text="@string/prioritizationtime"
+                android:textColor="@color/outwait_color"
+                android:textSize="@dimen/title_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/configDelayDuration" />
+
+            <mobi.upod.timedurationpicker.TimeDurationPicker
+                android:id="@+id/configPrioDuration"
+                android:layout_width="213dp"
+                android:layout_height="247dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@color/duration_digit_color"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvPrioritizationTime"
+                app:layout_constraintStart_toStartOf="@+id/tvPrioritizationTime"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrioritizationTime"
+                app:layout_constraintVertical_bias="0.0"
+                app:timeUnits="hhmm">
+
+            </mobi.upod.timedurationpicker.TimeDurationPicker>
+
+            <android.widget.Button
+                android:id="@+id/btnLogout"
+                style="@style/DefaultButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick="@{()->viewModel.logout()}"
+                android:text="@string/logout"
+                app:layout_constraintBottom_toTopOf="@+id/tvMode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <android.widget.Button
+                android:id="@+id/countOfClients"
+                style="@style/CounterClient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tvMode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/btnLogout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OutWait</string>
+    <!-- Strings related to login -->
+    <string name="are_you_a_client"><i>Are you a client?</i></string>
+    <string name="are_you_an_institute"><i>Are you an institute ?</i></string>
+    <string name="sign_in">Sign in</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="reset_password">Reset</string>
+    <string name="reset_text">Enter your username in order to get a new password via your email</string>
+    <string name="password">"Password</string>
+    <!-- Strings related to management -->
+    <string name="editmode_header">Editmode is enabled</string>
+    <string name="slotcode">Slot code</string>
+    <string name="identifier">Identifier</string>
+    <string name="duration">Duration</string>
+    <string name="appointment_time">Appointment Time</string>
+    <string name="title_add_slot">Add a Slot</string>
+    <string name="confirm">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="fixed_slot">Fixed Slot</string>
+    <string name="undo">UNDO</string>
+    <string name="slot_details">Slot details</string>
+    <string name="standard_slot_duration">Default slot duration</string>
+    <string name="notificationtime">Notification time</string>
+    <string name="delay_notificationtime">Delay notification time</string>
+    <string name="prioritizationtime">Prioritization time</string>
+    <string name="title_edit_dialog">Edit slot</string>
+    <string name="title_auxiliary_identifier">Auxiliary Identifier:</string>
+    <string name="title_duration">Duration:</string>
+    <string name="title_appointment">Appointment:</string>
+    <string name="logout">Logout</string>
+    <!-- Strings related to edit/enter slotCode -->
+    <string name="enter_slotcode_text">Please enter your slot code</string>
+    <string name="refresh">Refresh</string>
+    <string name="try_refresh">Internet Error. Try to refresh.</string>
+    <!-- Strings for Error-Notifications (Institute) -->
+    <string name="TRANSACTION_DENIED">Transaction denied!</string>
+    <string name="LOGIN_DENIED">Login denied!</string>
+    <string name="NOT_IN_TRANSACTION">No running transaction!</string>
+    <string name="NETWORK_ERROR">Network error. Please check your Internet connection!</string>
+    <string name="COMMUNICATION_ERROR">Can\'t reach the server. Wait a moment and try to log in again!</string>
+    <string name="SERVER_ERROR">A server error occurred. Please contact OutWait!</string>
+    <string name="INVALID_REQUEST">The server denies your request. Please contact OutWait!</string>
+    <!-- Strings for Error-Notifications (Client) -->
+    <string name="INVALID_SLOT_CODE">Your code is not valid!</string>
+    <string name="INTERNAL_ERROR">An internal server error has occurred. Please contact OutWait!</string>
+    <string name="INTERNET_ERROR">Lost connection to server. Check your internet connection and try to refresh!</string>
+    <string name="EXPIRED_SLOT_CODE">Your Slot has expired!</string>
+    <string name="process_title">Processing</string>
+    <!-- Strings related to push notifications -->
+    <string name="Perm_Notif_BaseTitle">Your next appointment today</string>
+    <string name="Perm_Notif_Basetext1">with\u00A0</string>
+    <string name="Perm_Notif_Basetext2">\u00A0is at\u00A0</string>
+    <string name="Delay_Notif_BaseTitle">Delay of your appointment with\u00A0</string>
+    <string name="Delay_Notif_BaseText1">by\u00A0</string>
+    <string name="Delay_Notif_BaseText2">\u00A0h, now at\u00A0</string>
+    <string name="Pending_Notif_BaseTitle1">Your appointment with\u00A0</string>
+    <string name="Pending_Notif_BaseTitle2">\u00A0will begin shortly!</string>
+    <string name="Pending_Notif_BaseText">Please go to the institution immediately!</string>
+    <string name="Notfi_Basetext_oClock">\u00A0o\'clock</string>
+    <!-- Strings related to QR scan -->
+    <string name="permission_allowed">Permission allowed</string>
+    <string name="title_permission_dialog">Permission required</string>
+    <string name="explanation_text_permission">Permission to access your camera is required to scan your QR-Code</string>
+    <string name="text_scanning">Scanning Code</string>
+    <!-- Strings related to management settings -->
+    <string name="no_result">No Result</string>
+    <string name="failure_add_slot">Failed: Please enter an appointment time</string>
+    <string name="text_save_config">Settings saved</string>
+    <string name="text_denied_save_config">Queue is not empty. Mode can\'t be changed, changes won\'t be saved</string>
+    <string name="text_avoid_back_press_management">Please logout first</string>
+    <string name="text_counter">Count of Clients: </string>
+    <string name="modeOne">Mode 1</string>
+    <string name="modeTwo">Mode 2</string>
+    <string name="navigateUp">Navigate up</string>
+    <string name="it_s_your_turn_in">It\'s your turn in:</string>
+    <string name="back_press_client">You can enter a new appointment after your appointment is finished</string>
+    <string name="save">Save</string>
+    <string name="active_mode">Active Mode is</string>
+
+</resources>

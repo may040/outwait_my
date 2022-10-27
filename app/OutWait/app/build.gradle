@@ -1,0 +1,150 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
+}
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+android {
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "edu.kit.outwait"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        
+
+        // entfernt, da globale Config, darf nur einmal deklariert werden
+       // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // CustomTestRunner for using HiltTestApplication in (Instrumented) AndroidTests
+        testInstrumentationRunner "edu.kit.outwait.util.CustomTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+
+    }
+
+    buildFeatures{
+
+        dataBinding=true
+    }
+
+    repositories {
+        jcenter()
+    }
+
+    testOptions.unitTests {
+        includeAndroidResources = true
+        returnDefaultValues = true
+    }
+}
+
+dependencies {
+    def room_version = "2.2.6"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    testImplementation "androidx.room:room-testing:$room_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation 'joda-time:joda-time:2.10.9'
+    implementation 'mobi.upod:time-duration-picker:1.1.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-beta01'
+
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.3.3"
+
+
+    // Dependency for Socket.IO.client
+    implementation('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    //implementation('io.socket:socket.io-client:0.9.0') {
+    //    exclude group: 'org.json', module: 'json'
+    //}
+
+    //Dependency for timepicker android 21
+    implementation 'com.github.ifr0z:timepickercompact:1.0'
+
+    //Dependency to generate a QRCode
+    implementation 'com.google.zxing:core:3.4.0'
+
+    //Dependency for progress bar
+    implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
+
+    //Dependency for qr scan
+    implementation('com.journeyapps:zxing-android-embedded:4.1.0') { transitive = false }
+
+    //Dependency for login design
+    implementation 'com.lukelorusso:codeedittext:1.0.6'
+    implementation 'com.github.HITGIF:TextFieldBoxes:1.4.5'
+
+    //Dependency for recyclerview design
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+    implementation "androidx.test.espresso:espresso-idling-resource:$espresso"
+    def fragment_version = "1.3.1"
+
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
+
+
+    testImplementation 'junit:junit:4.13.2'
+
+    def mockk_version = "1.9.3"
+    androidTestImplementation "io.mockk:mockk-android:$mockk_version"
+    testImplementation "io.mockk:mockk:$mockk_version"
+
+
+    testImplementation "com.google.truth:truth:$truth"
+    testImplementation "android.arch.core:core-testing:$core_testing"
+
+    androidTestImplementation "androidx.test.ext:junit-ktx:$android_junit_ext"
+    androidTestImplementation "com.google.truth:truth:$truth"
+    androidTestImplementation "io.mockk:mockk:$mockk"
+
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    androidTestImplementation 'androidx.test:core:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation "androidx.test:rules:$android_test_rules"
+
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2'
+
+    testImplementation "org.json:json:20140107"
+}

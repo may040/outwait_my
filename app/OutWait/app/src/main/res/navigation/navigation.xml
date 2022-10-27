@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/forwarderFragment">
+
+    <fragment
+        android:id="@+id/institutLoginFragment"
+        android:name="edu.kit.outwait.managmentLogin.institutLoginScreen.InstitutLoginFragment"
+        android:label="InstitutLoginFragment" />
+    <fragment
+        android:id="@+id/passwordForgotFragment"
+        android:name="edu.kit.outwait.managmentLogin.passwordForgottenScreen.PasswordForgotFragment"
+        android:label="passwordForgotFragment" />
+    <dialog
+        android:id="@+id/addSlotDialogFragment"
+        android:name="edu.kit.outwait.recyclerviewScreens.addSlotDialog.AddSlotDialogFragment"
+        android:label="AddSlotDialogFragment" />
+    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/editCodeFragment"
+        android:name="edu.kit.outwait.clientScreens.editCodeScreen.EditCodeFragment"
+        android:label="EditCodeFragment" />
+    <fragment
+        android:id="@+id/remainingTimeFragment"
+        android:name="edu.kit.outwait.clientScreens.remainingTimeScreen.RemainingTimeFragment"
+        android:label="RemainingTimeFragment" >
+        <action
+            android:id="@+id/action_remainingTimeFragment_to_forwarderFragment"
+            app:destination="@id/forwarderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/configDialogFragment2"
+        android:name="edu.kit.outwait.recyclerviewScreens.configurationsScreen.ConfigDialogFragment"
+        android:label="ConfigDialogFragment" >
+        <action
+            android:id="@+id/action_configDialogFragment2_to_forwarderFragment"
+            app:destination="@id/forwarderFragment"
+            app:popUpTo="@id/forwarderFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/editTimeSlotDialogFragment"
+        android:name="edu.kit.outwait.recyclerviewScreens.editSlotDialog.EditTimeSlotDialogFragment"
+        android:label="EditTimeSlotDialogFragment" >
+    </dialog>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="edu.kit.outwait.loginSystem.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_passwordForgotFragment"
+            app:destination="@id/passwordForgotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forwarderFragment"
+        android:name="edu.kit.outwait.loginSystem.ForwarderFragment"
+        android:label="fragment_forwarder"
+        tools:layout="@layout/fragment_forwarder" >
+        <action
+            android:id="@+id/action_forwarderFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_forwarderFragment_to_remainingTimeFragment"
+            app:destination="@id/remainingTimeFragment" />
+        <action
+            android:id="@+id/action_forwarderFragment_to_managementViewFragment"
+            app:destination="@id/managementViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/managementViewFragment"
+        android:name="edu.kit.outwait.recyclerviewScreens.managementViewScreen.ManagementViewFragment"
+        android:label="ManagementViewFragment" >
+        <action
+            android:id="@+id/action_managementViewFragment_to_configDialogFragment2"
+            app:destination="@id/configDialogFragment2" />
+        <action
+            android:id="@+id/action_managementViewFragment_to_editTimeSlotDialogFragment"
+            app:destination="@id/editTimeSlotDialogFragment" />
+        <action
+            android:id="@+id/action_managementViewFragment_to_addSlotDialogFragment"
+            app:destination="@id/addSlotDialogFragment" />
+    </fragment>
+</navigation>
