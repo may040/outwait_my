@@ -32,12 +32,4 @@ class HeaderTransaction(
             }
         }
     }
-
-    /**
-     * Binds attributes of item with its layout
-     *
-     * @param item Slot
-     */
-    override fun bind(item: TimeSlotItem) {
-    }
 }
